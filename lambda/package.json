@@ -1,0 +1,31 @@
+{
+  "name": "awsboilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate configuration.",
+  "main": "main.js",
+  "author": "Jhonatan R. Santos",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "@types/aws-lambda": "^8.10.39",
+    "aws-lambda": "^1.0.4",
+    "aws-sdk": "^2.596.0",
+    "aws-sdk-mock": "^5.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-stage-2": "^6.24.1",
+    "core-js": "3",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.9.0",
+    "esm": "^3.2.25",
+    "serverless": "^1.60.4",
+    "serverless-offline": "^5.12.1",
+    "serverless-webpack": "^5.3.1",
+    "transform-loader": "^0.2.4",
+    "webpack": "^4.41.5"
+  }
+}
