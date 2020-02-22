@@ -7,33 +7,33 @@ module.exports = {
   mode         : slsw.lib.webpack.isLocal ? 'development' : 'production',
   optimization : {
     minimize    : false,
-    usedExports : true, // Tree-shaking!
+    usedExports : true, // Tree shaking!
   },
   performance : {
     // Turn off size warnings for entry points
     hints : false,
   },
-  devtool : slsw.lib.webpack.isLocal ? 'source-map' : 'none', // Sourcemap for local debug!
-  output  : {
+  externals : ['aws-sdk'],
+  output    : {
     libraryTarget : 'commonjs',
     path          : path.join(__dirname, '.webpack'),
     filename      : '[name].js',
   },
   module : {
     rules : [
-      {
-        test   : /node_modules\/(pdfkit|fontkit|png-js|linebreak|unicode-properties|brotli)\//,
-        loader : 'transform-loader?brfs',
+      { // Package js files.
+        test    : /\.js$/,
+        exclude : /node_modules/,
+        use     : ['babel-loader'],
       },
-      {
-        test : /\.js$/,
-        use  : [
-          {
-            loader : 'babel-loader',
-          },
-        ],
-        exclude : [/node_modules/],
+      { // Package ts files.
+        test    : /\.ts$/,
+        exclude : /node_modules/,
+        use     : ['babel-loader'],
       },
     ],
+  },
+  resolve : {
+    extensions : ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
