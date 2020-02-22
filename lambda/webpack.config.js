@@ -7,11 +7,11 @@ module.exports = {
   mode         : slsw.lib.webpack.isLocal ? 'development' : 'production',
   optimization : {
     minimize    : false,
-    usedExports : true // Tree-shaking!
+    usedExports : true, // Tree-shaking!
   },
   performance : {
     // Turn off size warnings for entry points
-    hints : false
+    hints : false,
   },
   devtool : slsw.lib.webpack.isLocal ? 'source-map' : 'none', // Sourcemap for local debug!
   output  : {

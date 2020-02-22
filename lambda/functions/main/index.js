@@ -1,3 +1,6 @@
+// Get all environment variables
+const CONFIG = process.env.CONFIG ? JSON.parse(process.env.CONFIG) : {};
+
 /**
  * Main handler
  *
@@ -11,9 +14,7 @@
 export const handler = async (event) => {
   return {
     statusCode : 200,
-    body       : JSON.stringify({
-      message : 'Serverless Boilerplate!',
-    }),
+    body       : JSON.stringify(CONFIG),
   };
 };
 

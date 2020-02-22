@@ -5,8 +5,8 @@ provider:
   runtime: nodejs10.x
   stage: ${opt:stage, 'dev'}
 
-#  enviroment:
-#    CONFIG:
+  environment:
+    CONFIG: ${file(config/config.js)}
 
   custom:
     webpackConfig: 'webpack.config.js'
